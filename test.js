@@ -6,3 +6,5 @@ function charCount(str){
     // if char is anything, do nothing
     // return object at end
 }
+
+console.log('h')
