@@ -1,10 +1,16 @@
 function charCount(str){
     // make obj ot return at end
-    // loop over string, for each character...
-        // if the char is a number/letter AND is a key in obj, add one to count
-        // if the char is a number/letter AND is not in obj, add it and set value to 1
-    // if char is anything, do nothing
-    // return object at end
-}
+    var result = {};
 
-console.log('h')
+    // loop over string, for each character...
+    for(var i=0; i < str.lenght; i++){
+        var char = str[i].toLowerCase()
+        if(result[char] > 0){
+            result[char]++;
+        }
+        else {
+            result[char] = 1;
+        };
+    }
+    return result;
+}
