@@ -1,11 +1,21 @@
-const users = [
-    {name: 'Ada Lovelace', premium: true},
-    {name: 'Grace Hopper', premium: false},
-    {name: 'Alan Turing', premium: true},
-    {name: 'Linus Torvalds', premium: false},
-    {name: 'Margaret Hamilton', premium: true}
+const phaseScores = [
+    {name: 'Vinicius Costa', score: 337},
+    {name: 'Roger Melo', score: 43},
+    {name: 'Alfredo Braga', score: 234},
+    {name: 'Ana Paula Rocha', score: 261},
+    {name: 'Vinicius Costa', score: 167},
+    {name: 'Roger Melo', score: 137},
+    {name: 'Alfredo Braga', score: 135},
+    {name: 'Ana Paula Rocha', score: 359},
+    {name: 'Pedro H. Silva', score: 133}
 ]
 
-const premiumUsers = users.filter(i => i.premium)
+const rogerScore = phaseScores.reduce((acc, score) => {
+    if (score.name === 'Roger Melo') {
+        acc += score.score
+    }
+    return acc
+}, 0)
 
-console.log(premiumUsers)
+
+console.log(rogerScore)
