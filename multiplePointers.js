@@ -1,18 +1,19 @@
-function sumZero(arr) {
+function countUniqueValues(arr) {
     let left = 0;
-    let right = arr.length - 1;
+    let right = 1;
+    let total = 0;
 
-    while(left < right) {
-        let sum = arr[left] + arr[right]
-        if (sum === 0) {
-            return [arr[left], arr[right]]
-        } else if (sum > 0) {
-            right--
+    while(right <= arr.length) {
+        if (arr[left] === arr[right]) {
+            right++
+            continue
         } else {
-            left++
+            total++
+            left = right
+            right++
         }
-
     }
+    return total
 }
 
-console.log(sumZero([-3, -2, -1, 0, 1, 2, 8, 4]))
+console.log(countUniqueValues([-3, -2, -1, 0, 6, 1, 1,  2, 8, 4]))
