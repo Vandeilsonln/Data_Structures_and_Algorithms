@@ -17,5 +17,5 @@ function charCount(str){
     return result;
 }
 
-a = charCount('Hello World')
+a = charCount('Hello World');
 console.log(a);
