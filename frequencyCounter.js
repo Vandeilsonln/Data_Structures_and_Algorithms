@@ -19,10 +19,10 @@ function same(arr1, arr2) {
     }
 
     for (let key in frequencyCounter1) {
-        if (!(key ** 2 in frequencyCounter2)) {
+        if (!(key in frequencyCounter2)) {
             return false
         }
-        if (frequencyCounter2[key**2] !== frequencyCounter1[key]) {
+        if (frequencyCounter2[key] !== frequencyCounter1[key]) {
             return false
         }
     }
@@ -30,4 +30,4 @@ function same(arr1, arr2) {
     return true
 }
 
-console.log(same([1, 2, 3], [1, 4, 9]))
+console.log(same('qwerty', 'ytrewq'))
