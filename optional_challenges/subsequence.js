@@ -1,14 +1,8 @@
 function isSubsequence(sub, full){
-    var i = 0
-    var j = 0
-
-    if(!sub) return true
-    while(j < full.length) {
-        if (full[j] === sub[i]) i++
-        if (i === sub.length) return true
-        j++
-    }
-    return false
+    if(sub.length === 0) return true
+    if(full.length === 0) return false
+    if(full[0] === sub[0]) return isSubsequence(sub.slice(1), full.slice(1))
+    return isSubsequence(sub, full.slice(1))
 }
 
 console.log(isSubsequence('hello', 'hello world'))
