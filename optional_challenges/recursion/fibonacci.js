@@ -1,6 +1,8 @@
-function fib(numLimit){
-    if(numLimit <= 2) return 1
-    return fib(numLimit-1) + fib(numLimit -2)
+function fibonacci(elemento){
+    if (elemento <= 1) return 1
+    return fibonacci(elemento-1) + fibonacci(elemento-2)
 }
 
-console.log(fib(50))
+for (let i=0; i < 10; i++){
+    console.log(fibonacci(i))
+}
