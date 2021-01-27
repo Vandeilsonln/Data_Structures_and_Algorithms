@@ -37,4 +37,11 @@ function mergeSort(arr){
     return merge(left, right)
 }
 
-console.log(mergeSort([1,2,4,8, 3, 5, 7, 15, 24, 20, 12, 9]))
+
+let arr = []
+let count = 1000
+for (let i =0; i <= count; i++){
+    arr.push(Math.random())    
+}
+
+console.log(mergeSort(arr))
