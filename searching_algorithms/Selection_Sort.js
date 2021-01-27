@@ -15,5 +15,9 @@ function selectionSort(arr){
     
     return arr
 }
-
-console.log(selectionSort([1,5,4,9,7,3,8,1,6,2,5,10,98,46,35,87,45,62,15]))
+let arr = []
+let count = 100000000
+for (let i =0; i <= count; i++){
+    arr.push(Math.random())    
+}
+console.log(selectionSort([arr]))

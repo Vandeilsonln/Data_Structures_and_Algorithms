@@ -39,7 +39,7 @@ function mergeSort(arr){
 
 
 let arr = []
-let count = 1000
+let count = 10000000
 for (let i =0; i <= count; i++){
     arr.push(Math.random())    
 }
