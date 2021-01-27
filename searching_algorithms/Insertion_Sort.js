@@ -9,4 +9,10 @@ function insertionSort(arr){
     return arr
 }
 
-console.log(insertionSort([1,2,5,7,84,45,65,24,32,12,64,56,97,89]))
+let arr = []
+let count = 150000
+for (let i =0; i <= count; i++){
+    arr.push(Math.random())    
+}
+
+console.log(insertionSort(arr))
