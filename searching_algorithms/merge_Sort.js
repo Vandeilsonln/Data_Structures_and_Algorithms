@@ -28,4 +28,13 @@ function merge(arr1, arr2){
     return mergedArray
 }
 
-console.log(merge([1,2,4,8], [3, 5, 7]))
+function mergeSort(arr){
+    if(arr.length <= 1) return arr
+    let mid = Math.floor(arr.length /2)
+    let left = mergeSort(arr.slice(0, mid))
+    let right = mergeSort(arr.slice(mid))
+
+    return merge(left, right)
+}
+
+console.log(mergeSort([1,2,4,8, 3, 5, 7, 15, 24, 20, 12, 9]))
