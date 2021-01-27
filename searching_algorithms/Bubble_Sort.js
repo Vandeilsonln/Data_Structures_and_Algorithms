@@ -16,5 +16,9 @@ function bubbleSort(arr){
     }
     return arr
 }
-
-console.log(bubbleSort([1,2,5,4,9,25,98,57,14,99,35, 2]))
+let arr = []
+let count = 50000
+for (let i =0; i <= count; i++){
+    arr.push(Math.random())    
+}
+console.log(bubbleSort(arr))
