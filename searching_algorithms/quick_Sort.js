@@ -27,10 +27,11 @@ function quickSort(arr, left=0, right=arr.length-1){
     return arr
 }
 
-let num = 1000000
+let num = 100000000
 var bigList = []
 for (let i=0; i<num; i++){
     bigList.push(Math.random())
 }
+//console.log(bigList.sort())
 
 console.log(quickSort(bigList))
