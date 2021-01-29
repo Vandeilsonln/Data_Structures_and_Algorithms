@@ -27,4 +27,34 @@ class SinglyLinkedList{
         this.length++
         return this
     }
+
+    pop(){
+        if(this.length === 0) return undefined
+        var current = this.head
+        var newTail = current
+        while(current.next){
+            newTail = current
+            current = current.next
+        }
+        this.tail = newTail
+        this.tail.next = null
+        this.length--
+        if (this.length === 0){
+            this.head = null
+            this.tail = null
+        }
+        return current
+    }
 }
+
+
+var myList = new SinglyLinkedList()
+myList.push('First')
+myList.push('Second')
+myList.push('Third')
+myList.push('Fourth')
+
+console.log(myList)
+
+myList.pop()
+console.log(myList)
