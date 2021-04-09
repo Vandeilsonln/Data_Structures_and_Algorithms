@@ -35,6 +35,15 @@ public class Vetores {
 
     }
 
+    public int busca(String elem){
+        for(int i=0; i<this.tamanho; i++){
+            if (this.elementos[i].equals(elem)){
+                return i;
+            }
+        }
+        return -1;
+    }
+
     @Override
     public String toString() {
 
