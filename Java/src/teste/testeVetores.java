@@ -14,5 +14,7 @@ public class testeVetores {
 
         System.out.println(vetores.getTamanho());
         System.out.println(vetores);
+
+        System.out.println(vetores.busca(0));
     }
 }
