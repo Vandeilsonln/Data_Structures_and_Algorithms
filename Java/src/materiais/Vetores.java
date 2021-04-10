@@ -1,7 +1,5 @@
 package materiais;
 
-import java.util.Arrays;
-
 public class Vetores {
 
     private String[] elementos;
@@ -27,12 +25,8 @@ public class Vetores {
     }
 
     public String busca(int posicao){
-        if(posicao >= 0 && posicao < tamanho){
-            return this.elementos[posicao];
-        } else{
-            throw new IllegalArgumentException("Posição inválida");
-        }
-
+        verifyIfPositionIsValid(posicao);
+        return this.elementos[posicao];
     }
 
     public int busca(String elem){
@@ -42,6 +36,19 @@ public class Vetores {
             }
         }
         return -1;
+    }
+
+    public void adiciona(String elemento, int pos){
+        verifyIfPositionIsValid(pos);
+
+        for(int i = this.tamanho-1; i>=pos; i--){
+            this.elementos[i+1] = this.elementos[i];
+        }
+        this.elementos[pos] = elemento;
+        this.tamanho++;
+
+
+
     }
 
     @Override
@@ -62,5 +69,11 @@ public class Vetores {
         sb.append("]");
 
         return sb.toString();
+    }
+
+    private void verifyIfPositionIsValid(int posicao) {
+        if (!(posicao >= 0 && posicao <= tamanho)) {
+            throw new IllegalArgumentException("Posicao Invalida");
+        }
     }
 }

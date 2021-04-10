@@ -17,5 +17,8 @@ public class testeVetores {
 
         System.out.println(vetores.busca(0));
         System.out.println(vetores.busca("terceirol"));
+
+        vetores.adiciona("Zero", 2);
+        System.out.println(vetores);
     }
 }
