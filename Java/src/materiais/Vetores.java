@@ -46,8 +46,25 @@ public class Vetores {
         }
         this.elementos[pos] = elemento;
         this.tamanho++;
+    }
 
+    public void remover(int pos){
+        verifyIfPositionIsValid(pos);
 
+        for(int i=pos; i< this.tamanho-1; i++){
+            this.elementos[i] = this.elementos[i+1];
+        }
+        this.elementos[this.tamanho-1] = null;
+        this.tamanho--;
+    }
+
+    public void remover(String elemento){
+        int pos = this.busca(elemento);
+        if(pos >= 0){
+            this.remover(pos);
+        } else {
+            System.out.println("Esse elemento não existe no vetor");
+        }
 
     }
 
@@ -72,7 +89,7 @@ public class Vetores {
     }
 
     private void verifyIfPositionIsValid(int posicao) {
-        if (!(posicao >= 0 && posicao <= tamanho)) {
+        if (!(posicao >= 0 && posicao < tamanho)) {
             throw new IllegalArgumentException("Posicao Invalida");
         }
     }
