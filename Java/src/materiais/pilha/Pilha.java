@@ -1,20 +1,25 @@
 package materiais.pilha;
 
-public class Pilha<T> {
+import materiais.estaticos.EstruturaEstatica;
+
+public class Pilha<T> extends EstruturaEstatica<T> {
 
     private T[] elementos;
     private int tamanho;
 
+    public Pilha(){
+        super(10);
+    }
+
     public Pilha(int capacidade){
-        elementos = (T[]) new Object[capacidade];
-        tamanho = 0;
+        super(capacidade);
     }
 
     public int getTamanho(){
         return this.tamanho;
     }
 
-    
+
 
     @Override
     public String toString() {
