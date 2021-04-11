@@ -1,4 +1,4 @@
-package teste;
+package teste.arrays;
 
 public class Contato {
 

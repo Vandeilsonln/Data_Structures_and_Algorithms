@@ -1,6 +1,6 @@
-package teste;
+package teste.arrays;
 
-import materiais.Vetores;
+import materiais.array.Vetores;
 
 public class testeVetores {
 

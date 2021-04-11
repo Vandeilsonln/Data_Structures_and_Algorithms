@@ -1,4 +1,4 @@
-package materiais;
+package materiais.array;
 
 import java.lang.reflect.Array;
 

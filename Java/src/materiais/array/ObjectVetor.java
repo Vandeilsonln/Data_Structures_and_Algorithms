@@ -1,16 +1,16 @@
-package materiais;
+package materiais.array;
 
-public class Vetores {
+public class ObjectVetor {
 
-    private String[] elementos;
+    private Object[] elementos;
     private int tamanho;
 
-    public Vetores(int capacidade){
-        this.elementos = new String[capacidade];
+    public ObjectVetor(int capacidade){
+        this.elementos = new Object[capacidade];
         this.tamanho = 0;
     }
 
-    public boolean adiciona(String elemento){
+    public boolean adiciona(Object elemento){
         if(this.tamanho < this.elementos.length){
             elementos[tamanho] = elemento;
             tamanho++;
@@ -24,12 +24,12 @@ public class Vetores {
         return this.tamanho;
     }
 
-    public String busca(int posicao){
+    public Object busca(int posicao){
         verifyIfPositionIsValid(posicao);
         return this.elementos[posicao];
     }
 
-    public int busca(String elem){
+    public int busca(Object elem){
         for(int i=0; i<this.tamanho; i++){
             if (this.elementos[i].equals(elem)){
                 return i;
@@ -38,7 +38,7 @@ public class Vetores {
         return -1;
     }
 
-    public void adiciona(String elemento, int pos){
+    public void adiciona(Object elemento, int pos){
         verifyIfPositionIsValid(pos);
 
         for(int i = this.tamanho-1; i>=pos; i--){
@@ -58,7 +58,7 @@ public class Vetores {
         this.tamanho--;
     }
 
-    public void remover(String elemento){
+    public void remover(Object elemento){
         int pos = this.busca(elemento);
         if(pos >= 0){
             this.remover(pos);

@@ -1,7 +1,7 @@
-package teste;
+package teste.arrays;
 
-import materiais.ObjectVetor;
-import materiais.Lista;
+import materiais.array.ObjectVetor;
+import materiais.array.Lista;
 
 public class TesteObjectVetor {
     public static void main(String[] args) {
@@ -33,8 +33,9 @@ public class TesteObjectVetor {
         Lista<Contato> contatos = new Lista<>(5);
 
         contatos.adiciona(c1);
-        contatos.adiciona(new Contato("Teste","7894560", "email.com"));
+        contatos.adiciona(new Contato("Teste", "7894560", "email.com"));
 
         System.out.println(contatos);
+
     }
 }
