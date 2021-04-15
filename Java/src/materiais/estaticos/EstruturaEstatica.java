@@ -50,6 +50,20 @@ public class EstruturaEstatica<T> {
         }
     }
 
+    protected boolean estaVazia(){
+        return this.tamanho == 0;
+    }
+
+    public void remover(int pos){
+        verifyIfPositionIsValid(pos);
+
+        for(int i=pos; i< this.tamanho-1; i++){
+            this.elementos[i] = this.elementos[i+1];
+        }
+        this.elementos[this.tamanho-1] = null;
+        this.tamanho--;
+    }
+
     @Override
     public String toString() {
 
