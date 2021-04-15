@@ -78,7 +78,7 @@ public class Lista<T> extends EstruturaEstatica<T> {
         return super.toString();
     }
 
-    private void verifyIfPositionIsValid(int posicao) {
+    protected void verifyIfPositionIsValid(int posicao) {
         if (!(posicao >= 0 && posicao < tamanho)) {
             throw new IllegalArgumentException("Posicao Invalida");
         }

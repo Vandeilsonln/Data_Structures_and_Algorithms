@@ -4,11 +4,8 @@ import materiais.estaticos.EstruturaEstatica;
 
 public class Pilha<T> extends EstruturaEstatica<T> {
 
-    private T[] elementos;
-    private int tamanho;
-
     public Pilha(){
-        super(10);
+        super();
     }
 
     public Pilha(int capacidade){
@@ -16,27 +13,30 @@ public class Pilha<T> extends EstruturaEstatica<T> {
     }
 
     public int getTamanho(){
-        return this.tamanho;
+        return super.tamanho;
     }
 
+    public void empilha(T elemento){
+        super.adiciona(elemento);
+    }
 
+    public T desempilha(){
+
+        T elem = topo();
+        this.tamanho--;
+
+        return elem;
+    }
+
+    public T topo(){
+        if (this.tamanho == 0){
+            return null;
+        }
+        return this.elementos[tamanho-1];
+    }
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("[");
-
-        for (int i = 0; i < this.tamanho - 1; i++){
-            sb.append(this.elementos[i]);
-            sb.append(", ");
-        }
-
-        if(this.tamanho>0){
-            sb.append(this.elementos[this.tamanho-1]);
-        }
-
-        sb.append("]");
-
-        return sb.toString();
+        return super.toString();
     }
 }

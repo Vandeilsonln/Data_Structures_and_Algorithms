@@ -1,22 +1,23 @@
 package materiais.estaticos;
 
 public class EstruturaEstatica<T> {
-    private T[] elementos;
-    private int tamanho;
+    protected T[] elementos;
+    protected int tamanho;
 
-    public EstruturaEstatica(int capacidade){
+    protected EstruturaEstatica(int capacidade){
         this.elementos = (T[]) new Object[capacidade];
         this.tamanho = 0;
     }
 
-    public EstruturaEstatica(){
+    protected EstruturaEstatica(){
         this(10);
     }
 
     protected boolean adiciona(T elemento){
+        this.aumentaCapacidade();
         if(this.tamanho < this.elementos.length){
-            elementos[tamanho] = elemento;
-            tamanho++;
+            this.elementos[tamanho] = elemento;
+            this.tamanho++;
             return true;
         } else {
             return false;
@@ -33,7 +34,7 @@ public class EstruturaEstatica<T> {
         this.tamanho++;
     }
 
-    public void aumentaCapacidade(){
+    protected void aumentaCapacidade(){
         if(this.tamanho == this.elementos.length){
             T[] elementosNovos = (T[]) new Object[this.elementos.length * 2];
             for (int i = 0; i<this.elementos.length; i++){
@@ -43,7 +44,7 @@ public class EstruturaEstatica<T> {
         }
     }
 
-    private void verifyIfPositionIsValid(int posicao) {
+    protected void verifyIfPositionIsValid(int posicao) {
         if (!(posicao >= 0 && posicao < tamanho)) {
             throw new IllegalArgumentException("Posicao Invalida");
         }
